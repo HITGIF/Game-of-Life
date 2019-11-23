@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.6.1",
+    "@material-ui/lab": "^4.0.0-alpha.32",
+    "clsx": "latest",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.2.0"
@@ -27,5 +30,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@material-ui/icons": "^4.5.1",
+    "fg-loadcss": "^2.1.0"
   }
 }
