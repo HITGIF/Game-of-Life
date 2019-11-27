@@ -106,7 +106,7 @@ export default function PersistentDrawerLeft (props) {
   const [open, setOpen] = React.useState(true);
   const [running, setRunning] = React.useState(false);
   const [mode, setMode] = React.useState('pan');
-  const [pattern, setPattern] = React.useState(Patterns.pentadecathlon.id);
+  const [pattern, setPattern] = React.useState('pentadecathlon');
   const [labelWidth, setLabelWidth] = React.useState(0);
   React.useEffect(() => {
     setLabelWidth(inputLabel.current.offsetWidth);
@@ -132,7 +132,7 @@ export default function PersistentDrawerLeft (props) {
 
   const handleChange = name => event => {
     setPattern(event.target.value);
-    props.setPattern(Patterns[Object.keys(Patterns)[event.target.value]]);
+    props.setPattern(Patterns[event.target.value]);
   };
 
   React.useEffect(() => {
@@ -208,7 +208,7 @@ export default function PersistentDrawerLeft (props) {
               }}
             >
               {Object.keys(Patterns).map((key) =>
-                <MenuItem value={Patterns[key].id}>{Patterns[key].name}</MenuItem>
+                <MenuItem value={key}>{Patterns[key].name}</MenuItem>
               )}
             </Select>
           </FormControl>
