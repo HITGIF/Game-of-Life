@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c638ec26-f46a-4ecd-b8c3-3e478367c22d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/carbonyl.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameBoard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js2plot.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/patterns.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js2plot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js2plot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/patterns.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/patterns.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -36,6 +31,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
@@ -91,7 +87,8 @@
       <workItem from="1574262161243" duration="212000" />
       <workItem from="1574352169813" duration="4840000" />
       <workItem from="1574361886832" duration="17261000" />
-      <workItem from="1574520530038" duration="97000" />
+      <workItem from="1574520530038" duration="7291000" />
+      <workItem from="1574865181560" duration="2319000" />
     </task>
     <servers />
   </component>

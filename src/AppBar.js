@@ -14,10 +14,19 @@ import Icon from '@material-ui/core/Icon';
 import {red} from "@material-ui/core/colors";
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
+import InputLabel from "@material-ui/core/InputLabel";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+import {Patterns} from "./patterns";
+import MenuItem from "@material-ui/core/MenuItem";
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
+  formControl: {
+    margin: theme.spacing(2),
+    width: 150,
+  },
   button: {
     backgroundColor: red,
   },
@@ -93,9 +102,15 @@ const useStyles = makeStyles(theme => ({
 export default function PersistentDrawerLeft (props) {
   const classes = useStyles();
   const theme = useTheme();
+  const inputLabel = React.useRef(null);
   const [open, setOpen] = React.useState(true);
   const [running, setRunning] = React.useState(false);
   const [mode, setMode] = React.useState('pan');
+  const [pattern, setPattern] = React.useState(Patterns.pentadecathlon.id);
+  const [labelWidth, setLabelWidth] = React.useState(0);
+  React.useEffect(() => {
+    setLabelWidth(inputLabel.current.offsetWidth);
+  }, []);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -113,6 +128,11 @@ export default function PersistentDrawerLeft (props) {
 
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+
+  const handleChange = name => event => {
+    setPattern(event.target.value);
+    props.setPattern(Patterns[Object.keys(Patterns)[event.target.value]]);
   };
 
   React.useEffect(() => {
@@ -174,13 +194,31 @@ export default function PersistentDrawerLeft (props) {
           </IconButton>
         </div>
         <div className={classes.drawerContainer}>
+          <FormControl variant="outlined" className={classes.formControl}>
+            <InputLabel ref={inputLabel} id="pattern-select-outlined-label">
+              Pattern
+            </InputLabel>
+            <Select
+              value={pattern}
+              onChange={handleChange('pattern')}
+              labelWidth={labelWidth}
+              inputProps={{
+                name: 'pattern',
+                id: 'outlined-age-native-simple',
+              }}
+            >
+              {Object.keys(Patterns).map((key) =>
+                <MenuItem value={Patterns[key].id}>{Patterns[key].name}</MenuItem>
+              )}
+            </Select>
+          </FormControl>
           <ToggleButtonGroup
             value={mode}
             exclusive
             onChange={handleMode}
             aria-label="text alignment"
           >
-            <ToggleButton value="0" aria-label="pan">
+            <ToggleButton value="0" aria-label="pan" selected={true}>
               <PanTool/>
             </ToggleButton>
             <ToggleButton value="1" aria-label="draw">
@@ -191,6 +229,8 @@ export default function PersistentDrawerLeft (props) {
             </ToggleButton>
           </ToggleButtonGroup>
           {getRunFAB()}
+          <span>Algo: {props.algo_runtime} ms</span>
+          <span>Render: {props.render_runtime} ms</span>
         </div>
       </Drawer>
     </div>

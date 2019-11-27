@@ -11,7 +11,7 @@ export default function js2plot (canvas, options) {
     options = {};
   let mode = Modes.PAN;
   let MAX_SCALE = 5;
-  let MIN_SCALE = 0.1;
+  let MIN_SCALE = 0.02;
   let SCROLL_SENSITIVITY = 0.9;
   let base_size_ws = (options.base_size_ws !== undefined) ? options.base_size_ws : 1;
   let grid_line_spacing_ws = (options.grid_line_spacing_ws !== undefined) ? options.grid_line_spacing_ws : 1 / 50;
@@ -64,7 +64,6 @@ export default function js2plot (canvas, options) {
   function updateScale () {
     ctx.canvas.width = ctx.canvas.clientWidth;
     ctx.canvas.height = ctx.canvas.clientHeight;
-
     let base_scale = Math.min(ctx.canvas.width, ctx.canvas.height) / base_size_ws;
     ws_to_vs_scale = base_scale * view_scale;
     x_min_ws = x_vs_to_ws(0);
@@ -83,11 +82,14 @@ export default function js2plot (canvas, options) {
   }
 
   function drawGrid (board) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     let x_base = x_ws_base;
     for (let m = xi; m <= xm; m++, x_base += factor) {
       let y_base = y_ws_base;
       for (let n = yi; n <= ym; n++, y_base -= factor) {
         if (board[m] && board[m][n]) {
+          // ctx.putImageData(imgData, 10, 10);
+          // ctx.putImageData(imgData, Math.floor(x_base), Math.floor(y_base));
           // let r = Math.floor(_sq(Math.cos(Math.atan2(n * 100, m * 100) / 2)) * 255);
           // let g = Math.floor(_sq(Math.cos(Math.atan2(n * 100, m * 100) / 2 - 2 * Math.acos(-1) / 3)) * 255);
           // let b = Math.floor(_sq(Math.cos(Math.atan2(n * 100, m * 100) / 2 + 2 * Math.acos(-1) / 3)) * 255);
@@ -245,11 +247,16 @@ export default function js2plot (canvas, options) {
      * object of the exception is returned (e.g. a TypeError for an unknown function name).
      */
     update: function (board) {
-      let error = null;
-      error = updateCanvasSizeAndRedraw(board);
+      // updateScale()
+      drawGrid(board);
       last_board = board;
-      ctx.canvas.dispatchEvent(new Event("plotchangeend"));
-      return error;
+      // ctx.canvas.dispatchEvent(new Event("plotchangeend"));
+    },
+
+    updateAndRedraw: function (board) {
+      updateCanvasSizeAndRedraw(board);
+      last_board = board;
+      // ctx.canvas.dispatchEvent(new Event("plotchangeend"));
     },
 
     /**
