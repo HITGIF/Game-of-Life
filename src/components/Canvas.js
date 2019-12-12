@@ -137,6 +137,8 @@ export default function Canvas (canvas) {
         case Modes.ERASE:
           eraseAt(x, y);
           break;
+        default:
+          break;
       }
       event.stopPropagation();
       event.preventDefault();
@@ -161,6 +163,8 @@ export default function Canvas (canvas) {
           break;
         case Modes.ERASE:
           eraseAt(x, y);
+          break;
+        default:
           break;
       }
       event.stopPropagation();

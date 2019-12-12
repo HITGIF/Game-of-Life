@@ -154,7 +154,7 @@ export default function PersistentDrawerLeft (props) {
               labelWidth={labelWidth}
               inputProps={{name: 'pattern', id: 'outlined-age-native-simple',}}>
               {Object.keys(Patterns).map((key) =>
-                <MenuItem value={key}>{Patterns[key].name}</MenuItem>
+                <MenuItem key={key} value={key}>{Patterns[key].name}</MenuItem>
               )}
             </Select>
           </FormControl>
