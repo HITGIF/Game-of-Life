@@ -1,6 +1,6 @@
 # Game of Life 
 
-Conway's Game of Life written with React.
+Conway's Game of Life made with React.
 
 ## Deployment
 
