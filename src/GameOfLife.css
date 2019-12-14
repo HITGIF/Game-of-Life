@@ -12,3 +12,12 @@
   font-family: 'Fipps';
   src: local('Fipps'), url(res/fonts/Fipps-Regular.otf) format('opentype');
 }
+
+.center_dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+}

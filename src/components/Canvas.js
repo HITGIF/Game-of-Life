@@ -18,7 +18,7 @@ export default function Canvas (canvas) {
   let grid_line_spacing_ws = 1 / 50;
 
   let view_scale = 1.0;
-  let view_center_ws = {x: 0.03, y: -0.01};
+  let view_center_ws = {x: 0.007, y: -0.007};
 
   let ctx = canvas.getContext("2d");
   let last_board = null;
