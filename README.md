@@ -2,18 +2,17 @@
     <img
     width=192
     height=192
-    class='logo'
     style='margin: 12px;'
     src='src/res/img/gol_logo.svg' />
 </p>
-<h1 
-    align='center'
-    class='title'
-    style = 'font-family: Fipps; 
-    font-size: 40px;
-    margin: 16px;'
-    >Game  of Life</h1>
+
 <div align="center">
+
+<h1 align='center'>
+    <img
+    width=500
+    src='src/res/img/gol.svg' />
+</h1>
 
 [Conway's Game of Life](https://www.conwaylife.com/) made with [React](https://reactjs.org/). 
 
@@ -47,4 +46,3 @@ npm start
 ## License
 
 This project is licensed under the terms of the [MIT license](/LICENSE).
-
