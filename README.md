@@ -11,7 +11,7 @@
 <h1 align='center'>
     <img
     width=500
-    src='src/res/img/gol.svg' />
+    src='src/res/img/game_of_life.svg' />
 </h1>
 
 [Conway's Game of Life](https://www.conwaylife.com/) made with [React](https://reactjs.org/). 
