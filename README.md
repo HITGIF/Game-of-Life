@@ -1,17 +1,11 @@
 <p align='center'>
-    <img
-    width=192
-    height=192
-    style='margin: 12px;'
-    src='src/res/img/gol_logo.svg' />
+    <img width="192" src="https://life.carbonyl.io/gol_logo.svg" alt="Game of Life logo">
 </p>
-
 <div align="center">
-
 <h1 align='center'>
     <img
     width=500
-    src='src/res/img/game_of_life.svg' />
+    src='https://life.carbonyl.io/game_of_life.svg' />
 </h1>
 
 [Conway's Game of Life](https://www.conwaylife.com/) made with [React](https://reactjs.org/). 
